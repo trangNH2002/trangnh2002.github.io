@@ -4,202 +4,304 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-header {
-  background-color: #004280;
-  border-radius: 10px;
-  color: white;
-  text-align: center;
+p {
+  margin-bottom: unset;
 }
-.progress {
-  width: 300px;
-}
-.card {
-  padding: 20px;
-  margin: 20px;
-  border: solid;
-  border-radius: 10px;
-}
-#zoom {
-  transition: all 1s ease;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-}
-
-#zoom:hover {
-  transform: scale(1.5, 1.5);
-  -webkit-transform: scale(1.5, 1.5);
-  -moz-transform: scale(1.5, 1.5);
-  -o-transform: scale(1.5, 1.5);
-  -ms-transform: scale(1.5, 1.5);
-}
-/** Tạo icon rung**/
-
-.hotline-phone-ring-wrap {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 999999;
-}
-.hotline-phone-ring {
+#main-body {
+  padding: 60px;
+  background-color: #fff;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  margin-top: -50px;
   position: relative;
-  visibility: visible;
-  background-color: transparent;
-  width: 110px;
-  height: 110px;
-  cursor: pointer;
-  z-index: 11;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  transition: visibility 0.5s;
+}
+header {
+  background-color: #2f4858;
+  color: white;
+  position: relative;
+}
+.text-header {
+  position: relative;
+  background-color: #008578;
+  width: 850px;
+  margin: 0 auto;
+  height: 350px;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 38%, 50% 100%, 0% 38%);
+}
+.text-header::after {
+  position: absolute;
+  content: "";
+  top: 0;
   left: 0;
-  bottom: 0;
-  display: block;
+  width: 850px;
+  margin: 0 auto;
+  height: 335px;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 35%, 50% 100%, 0% 35%);
+  background-color: #fff;
 }
-.hotline-phone-ring-circle {
-  width: 85px;
-  height: 85px;
-  top: 10px;
-  left: 10px;
+.text-header h1,
+.text-header h4 {
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 5;
+  margin-bottom: unset;
+}
+.text-header h1 {
+  color: #2f4859;
+  font-size: 60px;
+  padding-top: 60px;
+}
+.text-header h4 {
+  color: #333;
+  font-size: 35px;
+  padding-top: 10px;
+}
+.block-text {
   position: absolute;
-  background-color: transparent;
-  border-radius: 100%;
-  border: 2px solid #e60808;
-  -webkit-animation: phonering-alo-circle-anim 1.2s infinite ease-in-out;
-  animation: phonering-alo-circle-anim 1.2s infinite ease-in-out;
-  transition: all 0.5s;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-  opacity: 0.5;
+  bottom: 60px;
+  left: 0;
+  width: 100%;
+  display: flex;
 }
-.hotline-phone-ring-circle-fill {
-  width: 55px;
+.block-text .item-text {
+  width: 50%;
+}
+
+.block-text .item-text:nth-child(1) {
+  padding-left: 80px;
+}
+.block-text .item-text:nth-child(2) {
+  padding-left: 160px;
+}
+.block-title {
+  display: flex;
+  align-items: center;
+  background-color: #2f4858;
+  color: #ffffff;
+  height: 60px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  width: calc(100% - 30px);
+  margin: 9px;
+}
+.hexagon {
+  width: 70px;
+  height: 60px;
+  clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -18px;
+}
+.hexagon::before {
+  position: absolute;
+  content: "";
+  width: 65px;
   height: 55px;
-  top: 25px;
-  left: 25px;
-  position: absolute;
-  background-color: rgba(230, 8, 8, 0.7);
-  border-radius: 100%;
-  border: 2px solid transparent;
-  -webkit-animation: phonering-alo-circle-fill-anim 2.3s infinite ease-in-out;
-  animation: phonering-alo-circle-fill-anim 2.3s infinite ease-in-out;
-  transition: all 0.5s;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
+  background-color: #008578;
+  clip-path: polygon(25% 0, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
-.hotline-phone-ring-img-circle {
-  background-color: #e60808;
-  width: 33px;
-  height: 33px;
-  top: 37px;
-  left: 37px;
+.block-title i {
+  font-size: 38px;
+  z-index: 1;
+}
+.block-title p {
+  text-transform: uppercase;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding-left: 16px;
+}
+.content {
+  font-size: 20px;
+  padding: 30px 0;
+  color: #333;
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-left: 30px solid #2f4858;
+  border-bottom: 30px solid transparent;
   position: absolute;
-  background-size: 20px;
-  border-radius: 100%;
-  border: 2px solid transparent;
-  -webkit-animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
-  animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  top: 0;
+  right: -30px;
+}
+/*tạo khung cho ảnh đại diện*/
+.image-center {
+  margin-top: -145px;
+  position: relative;
+  z-index: 5;
+}
+.hex {
+  width: 250px;
+  height: 265px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: transform 0.5s ease-in-out;
+  
+}
+.hex img {
+  width: 215px;
+  height: 235px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.hotline-phone-ring-img-circle .pps-btn-img {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+.hex:hover {
+  transform: scale(1.2);
+}
+.block {
   display: flex;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 20px;
 }
-.hotline-phone-ring-img-circle .pps-btn-img img {
-  width: 20px;
-  height: 20px;
+.block .hexa {
+  width: 35px;
+  height: 40px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background-color: #008578;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.hotline-bar {
-  position: absolute;
-  background: rgb(49, 74, 166);
-  border-radius: 3px;
-  padding: 0 15px 0 0;
-  background-size: 100%;
-  cursor: pointer;
-  transition: all 0.8s;
-  -webkit-transition: all 0.8s;
-  z-index: 9;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 50px !important;
-  /* width: 175px !important; */
-  left: 33px;
-  bottom: 37px;
+.block i {
+  font-size: 22px;
 }
-.hotline-bar > a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: bold;
-  text-indent: 50px;
-  display: block;
-  letter-spacing: 1px;
-  line-height: 40px;
-  font-family: Arial;
+.block p {
+  font-size: 16px;
+  padding-left: 10px;
 }
-.hotline-bar > a:hover,
-.hotline-bar > a:active {
-  color: #fff;
+/*Tạo icon rung*/
+.ring {
+  animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
+  transform-origin: 50% 50%;
 }
-@-webkit-keyframes phonering-alo-circle-anim {
+
+.phonering-alo-phone.phonering-alo-active .phonering-alo-ph-img-circle {
+  animation: phonering-alo-circle-img-anim 1s infinite ease-in-out !important;
+}
+
+.phonering-alo-phone.phonering-alo-static .phonering-alo-ph-img-circle {
+  animation: phonering-alo-circle-img-anim 0 infinite ease-in-out !important;
+}
+.phonering-alo-phone.phonering-alo-green .phonering-alo-ph-img-circle {
+  background-color: #00aff2;
+  background-color: #00aff2 9;
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    -ms-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    -ms-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes phonering-alo-circle-anim {
   0% {
     -webkit-transform: rotate(0) scale(0.5) skew(1deg);
-    -webkit-opacity: 0.1;
+    transform: rotate(0) scale(0.5) skew(1deg);
+    opacity: 0.1;
   }
+
   30% {
     -webkit-transform: rotate(0) scale(0.7) skew(1deg);
-    -webkit-opacity: 0.5;
+    transform: rotate(0) scale(0.7) skew(1deg);
+    opacity: 0.5;
   }
+
   100% {
     -webkit-transform: rotate(0) scale(1) skew(1deg);
-    -webkit-opacity: 0.1;
+    transform: rotate(0) scale(1) skew(1deg);
+    opacity: 0.1;
   }
 }
-@-webkit-keyframes phonering-alo-circle-fill-anim {
+
+@keyframes phonering-alo-circle-fill-anim {
   0% {
     -webkit-transform: rotate(0) scale(0.7) skew(1deg);
-    opacity: 0.6;
+    transform: rotate(0) scale(0.7) skew(1deg);
+    opacity: 0.2;
   }
+
   50% {
     -webkit-transform: rotate(0) scale(1) skew(1deg);
-    opacity: 0.6;
+    transform: rotate(0) scale(1) skew(1deg);
+    opacity: 0.2;
   }
+
   100% {
     -webkit-transform: rotate(0) scale(0.7) skew(1deg);
-    opacity: 0.6;
+    transform: rotate(0) scale(0.7) skew(1deg);
+    opacity: 0.2;
   }
 }
-@-webkit-keyframes phonering-alo-circle-img-anim {
+
+@keyframes phonering-alo-circle-img-anim {
   0% {
     -webkit-transform: rotate(0) scale(1) skew(1deg);
+    transform: rotate(0) scale(1) skew(1deg);
   }
+
   10% {
     -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+    transform: rotate(-25deg) scale(1) skew(1deg);
   }
+
   20% {
     -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+    transform: rotate(25deg) scale(1) skew(1deg);
   }
+
   30% {
     -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+    transform: rotate(-25deg) scale(1) skew(1deg);
   }
+
   40% {
     -webkit-transform: rotate(25deg) scale(1) skew(1deg);
+    transform: rotate(25deg) scale(1) skew(1deg);
   }
+
   50% {
     -webkit-transform: rotate(0) scale(1) skew(1deg);
+    transform: rotate(0) scale(1) skew(1deg);
   }
+
   100% {
     -webkit-transform: rotate(0) scale(1) skew(1deg);
+    transform: rotate(0) scale(1) skew(1deg);
   }
 }
